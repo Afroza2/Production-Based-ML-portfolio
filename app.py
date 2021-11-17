@@ -37,6 +37,3 @@ def inputForm():
 
     return render_template('home.html', prediction = prediction, show_predictions_modal = True )
 
-
-if __name__ == '__main__':
-    app.run()
