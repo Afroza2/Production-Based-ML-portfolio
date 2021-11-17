@@ -52,6 +52,12 @@ app = Flask(__name__ )
 app.config.from_pyfile('config.Development.cfg')
 ```
 
+## Run Flask
+### Run flask for develop
+```
+$ python app.py
+```
+
 #### cfg example
 
 ```
