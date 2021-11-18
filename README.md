@@ -5,6 +5,11 @@ I created a basic flask-based portal where a person can give input on 14 paramet
 
 The dataset is taken from - https://www.kaggle.com/ronitf/heart-disease-uci
 
+## Python Virtual Environment Version
+
+3.6.8
+
+Both the ML model and the Flask app were built on this specific Python version
 
 ## Installation
 
