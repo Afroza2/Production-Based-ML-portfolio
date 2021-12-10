@@ -1,5 +1,7 @@
 import pandas as pd
 from flask import Flask, render_template, request
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql import text
 from joblib import load
 
 app = Flask(__name__)

@@ -2,15 +2,20 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {#    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">#}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
 </head>
 <body>
-
 
 <div class="container-fluid">
     <div class="row">
@@ -22,7 +27,7 @@
     </div>
     <div class="row">
         <div class="col-sm">
-            <form action="http://localhost:5000/" method="post">
+            <form class="form-vertical" action="http://localhost:5000/" method="post">
                 <div class="form-group row">
                     <label for="age" class="col-lg-3 col-form-label">Age</label>
                     <div class="col-sm-6">
@@ -33,63 +38,58 @@
                 </div>
                 <div class="form-group row">
                     <label for="sex" class="col-lg-3 col-form-label">Sex</label>
-                    <div class="form-check">
+                    <div class="form-check-inline">
                         <label class="form-check-label">
-                            <div class="col-sm-6">
-                                <input type="radio" class="form-check-input" id="sex" name="sex" value="0" required>Female
+                            <input type="radio" class="form-check-input" id="sex" name="sex" value="0" required>Female
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="sex" value="1">Male
                         </label>
                     </div>
                 </div>
-                <div class="form-check">
+                <div class="form-group row">
+                    <label for="cp" class="col-lg-3 col-form-label">Chest Pain Type</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" id="cp" name="cp" required>
+                            <option value="0">None</option>
+                            <option value="1">Mild</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Severe</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="age" class="col-lg-3 col-form-label">Resting Blood Pressure</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control form-control-sm" id="rbp" name="rbp"
+                               placeholder="Your bp in mm Hg" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="chol" class="col-lg-3 col-form-label">Cholesterol</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control form-control-sm" id="chol" name="chol"
+                               placeholder="Your serum cholestoral in mg/dl" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="fbs" class="col-lg-3 col-form-label">Fasting Blood Sugar</label>
+                    <div class="form-check-inline">
+
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" id="fbs" name="fbs" value="0" required>Non-diabetic
+                        </label>
+                    </div>
+                </div>
+                <div class="form-check-inline">+
                     <label class="form-check-label">
-                        <div class="col-sm-6">
-                            <input type="radio" class="form-check-input" name="sex" value="1">Male
+                        <input type="radio" class="form-check-input" id="fbs" name="fbs" value="1">Diabetic
                     </label>
                 </div>
         </div>
     </div>
-    <div class="form-group row">
-        <label for="cp" class="col-lg-3 col-form-label">Chest Pain Type</label>
-        <div class="col-sm-6">
-            <select class="form-control" id="cp" name="cp" required>
-                <option value="0">None</option>
-                <option value="1">Mild</option>
-                <option value="2">Medium</option>
-                <option value="3">Severe</option>
-            </select>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="age" class="col-lg-3 col-form-label">Resting Blood Pressure</label>
-        <div class="col-sm-6">
-            <input type="text" class="form-control form-control-sm" id="rbp" name="rbp"
-                   placeholder="Your bp in mm Hg" required>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="chol" class="col-lg-3 col-form-label">Cholesterol</label>
-        <div class="col-sm-6">
-            <input type="text" class="form-control form-control-sm" id="chol" name="chol"
-                   placeholder="Your serum cholestoral in mg/dl" required>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="fbs" class="col-lg-3 col-form-label">Fasting Blood Sugar</label>
-        <div class="form-check">
-            <label class="form-check-label">
-                <div class="col-9">
-                    <input type="radio" class="form-check-input" id="fbs" name="fbs" value="0" required>Non diabetic
-                    </label>
-                </div>
-        </div>
-    <div class="form-check">
-        <label class="form-check-label">
-            <div class="col-3">
-                <input type="radio" class="form-check-input" id="fbs" name="fbs" value="1">Diabetic
-            </label>
-            </div>
-    </div>
-</div>
     <div class="form-group row">
         <label for="restecg" class="col-lg-3 col-form-label">Resting Electrocardiographic Results</label>
         <div class="col-sm-6">
@@ -110,80 +110,92 @@
     </div>
     <div class="form-group row">
         <label for="exang" class="col-lg-3 col-form-label">Exercise Induced Angina</label>
-        <div class="form-check">
+        <div class="form-check-inline">
             <label class="form-check-label">
-                <div class="col-sm-6">
-                    <input type="radio" class="form-check-input" id="exang" name="exang" value="1" required>Yes
-                </div>
+                <input type="radio" class="form-check-input" id="exang" name="exang" value="1" required>Yes
             </label>
         </div>
-        <div class="form-check">
+        <div class="form-check-inline">
             <label class="form-check-label">
-                <div class="col-sm-6">
-                    <input type="radio" class="form-check-input" id="exang" name="exang" value="0" required>No
-                </div>
+                <input type="radio" class="form-check-input" id="exang" name="exang" value="0" required>No
             </label>
         </div>
     </div>
     <div class="form-group row">
-                <label for="oldpeak" class="col-lg-3 col-form-label">OldPeak (floating point value)</label>
-            <div class="form-check">
-                <input type="text" class="form-control form-control" id="oldpeak" name="oldpeak"
-                       placeholder="ST depression induced by exercise relative to rest" required>
-            </div>
+        <label for="oldpeak" class="col-lg-3 col-form-label">OldPeak (floating point value)</label>
+        <div class="form-check">
+            <input type="text" class="form-control form-control" id="oldpeak" name="oldpeak"
+                   placeholder="ST depression induced by exercise relative to rest" required>
         </div>
-        <div class="form-group row">
-                <label for="slope" class="col-lg-3 col-form-label">The Slope of the Peak Exercise ST Segment</label>
-            <div class="col-sm-6">
-                <select id="slope" class="form-control" name="slope" required>
-                    <option value="0">None</option>
-                    <option value="1">Medium</option>
-                    <option value="2">Severe</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-group row">
-                <label for="ca" class="col-lg-3 col-form-label">Number of Major Vessels (0-3)</label>
-            <div class="col-sm-6">
-                <select id="ca" class="form-control" name="ca" required>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-group row">
-                <label for="thal" class="col-lg-3 col-form-label">Thal: 3 = normal; 6 = fixed defect; 7 = reversable defect</label>
-            <div class="col-sm-6">
-                <select id="thal" class="form-control" name="thal" required>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                </select>
-            </div>
-        </div>
-<div class="row">
-    <div class="col text-center">
-      <button class="btn btn-primary">Submit</button>
     </div>
-  </div>
+    <div class="form-group row">
+        <label for="slope" class="col-lg-3 col-form-label">The Slope of the Peak Exercise ST Segment</label>
+        <div class="col-sm-6">
+            <select id="slope" class="form-control" name="slope" required>
+                <option value="0">None</option>
+                <option value="1">Medium</option>
+                <option value="2">Severe</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="ca" class="col-lg-3 col-form-label">Number of Major Vessels (0-3)</label>
+        <div class="col-sm-6">
+            <select id="ca" class="form-control" name="ca" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="thal" class="col-lg-3 col-form-label">Thal: 3 = normal; 6 = fixed defect; 7 = reversable
+            defect</label>
+        <div class="col-sm-6">
+            <select id="thal" class="form-control" name="thal" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    </div>
 </div>
-
 </form>
 </div>
 </div>
+
+{% if show_predictions_modal %}
+    <div class="center">
+        <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-info btn-lg"
+                type="submit" data-toggle="modal">See Result
+        </button>
+    </div>
+    <div id="id01" class="w3-modal">
+        <div class="modal-content">
+                    <div class="modal-header">
+                        <span onclick="document.getElementById('id01').style.display='none'"
+                                          class="close">&times;</span>
+            <div class="modal-body">
+                <p style="text-align:center">{{ prediction }}</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+{% endif %}
 </div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+
 </body>
 </html>
